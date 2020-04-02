@@ -124,7 +124,7 @@ if __name__ == "__main__":
                 else:
                     mm = str(i)
 
-                for day in list(range(1, 9)):
+                for day in list(range(1, 32)):
                     if day < 10:
                         dd = "0"+str(day)
                     else:
