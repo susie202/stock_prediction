@@ -57,7 +57,7 @@ def get_naver_news(path, query, yyyy, mm, dd):
     while True:
         try:
             for naver_news in naver_soups.find_all("a", {"class": "_sp_each_title"}):
-                naver_news_headers.append(naver_news.get_text())
+                naver_news_headers.append(naver_news.attrs['title'])
                 n_raw_date = naver_news.find_next("dd", {"class": "txt_inline"}).get_text()
                 naver_news_dates.append(re.findall(r"\b[0-9]+.[0-9]+.[0-9]+\b", n_raw_date)[0])
                 naver_news_links.append(naver_news.find_next("a").attrs['href'])
